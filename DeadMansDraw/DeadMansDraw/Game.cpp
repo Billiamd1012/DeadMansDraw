@@ -18,15 +18,22 @@ Game::Game() {
 	std::cout << "Game created \n";
 }
 
+//Initalises the deck and player
 void Game::startGame() {
 	std::cout << "Game started!\n";
 }
 
-
+//Removes the deck and prints results
 void Game::endGame() {
 	std::cout << "Game ended!\n";
 }
 
+//Tells the deck to shuffle itself
 void Game::shuffleDeck() {
 	std::cout << "Deck shuffled\n";
+}
+
+//Create a new deck
+void Game::createDeck() {
+
 }

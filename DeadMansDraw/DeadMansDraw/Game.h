@@ -1,5 +1,3 @@
-#pragma once
-
 /*
 	The game class is responsible for:
 	- starting a game
@@ -9,6 +7,8 @@
 	- initalising the players
 	- storing the currentTurn
 */
+
+
 class Game {
 public:
 	Game();
@@ -16,5 +16,6 @@ public:
 	void endGame();
 	void shuffleDeck();
 private:
+
 	void createDeck();
 };
