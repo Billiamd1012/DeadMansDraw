@@ -848,4 +848,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-out/*
+DeadMansDraw/out/*
