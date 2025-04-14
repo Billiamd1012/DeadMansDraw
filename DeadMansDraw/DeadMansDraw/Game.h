@@ -9,6 +9,7 @@
 	- initalising the players
 	- storing the currentTurn
 */
+#include "Deck.h"
 
 
 class Game {
@@ -18,6 +19,5 @@ public:
 	void endGame();
 	void shuffleDeck();
 private:
-
-	void createDeck();
+	Deck deck;
 };

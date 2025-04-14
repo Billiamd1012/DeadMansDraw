@@ -14,7 +14,7 @@
 using namespace std;
 
 Game::Game() {
-	
+	Deck deck;
 	std::cout << "Game created \n";
 }
 
@@ -30,10 +30,6 @@ void Game::endGame() {
 
 //Tells the deck to shuffle itself
 void Game::shuffleDeck() {
+	deck.shuffleCards();
 	std::cout << "Deck shuffled\n";
-}
-
-//Create a new deck
-void Game::createDeck() {
-
 }
