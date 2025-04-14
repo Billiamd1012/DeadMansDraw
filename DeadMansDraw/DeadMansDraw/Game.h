@@ -1,3 +1,5 @@
+#pragma once
+
 /*
 	The game class is responsible for:
 	- starting a game
