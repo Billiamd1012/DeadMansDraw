@@ -2,6 +2,8 @@
 //
 
 #include "DeadMansDraw.h"
+#include "gameTitle.h";
+
 
 using namespace std;
 
