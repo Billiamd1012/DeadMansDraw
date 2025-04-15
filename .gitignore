@@ -849,3 +849,5 @@ FodyWeavers.xsd
 *.sln.iml
 
 DeadMansDraw/out/*
+out/*
+DeadMansDraw/DeadMansDraw/out/*
