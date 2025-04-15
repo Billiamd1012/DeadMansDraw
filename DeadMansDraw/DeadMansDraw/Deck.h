@@ -8,7 +8,7 @@
 
 class Card;
 
-typedef std::vector<Card*> CardCollection;
+typedef std::vector<Card> CardCollection;
 
 class Deck {
 public:
