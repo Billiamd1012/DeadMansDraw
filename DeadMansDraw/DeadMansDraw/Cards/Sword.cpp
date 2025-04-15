@@ -17,7 +17,7 @@ Suit Sword::type() {
 }
 
 std::string Sword::toString() const {
-	return "";
+	return "Sword( "+ std::to_string(value) +")";;
 }
 
 void Sword::willAddToBank(const Game& game) {

@@ -17,7 +17,7 @@ Suit Chest::type() {
 }
 
 std::string Chest::toString() const {
-	return "";
+	return "Chest( "+ std::to_string(value) +")";;
 }
 
 void Chest::willAddToBank(const Game& game) {

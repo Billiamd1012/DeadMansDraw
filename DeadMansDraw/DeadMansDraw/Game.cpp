@@ -9,19 +9,30 @@
 */
 
 #include "Game.h"
-#include "Deck.h"
 #include <iostream>
 
 using namespace std;
 
-Game::Game() {
-	Deck deck;
-	std::cout << "Game created \n";
-}
 
 //Initalises the deck and player
 void Game::startGame() {
-	std::cout << "Game started!\n";
+	currentPlayer = &player1;
+	std::cout << "Starting Dead Man's Draw++!\n";
+	while (playing) {
+		int round = std::ceil(currentTurn+1)/2;
+		std::cout << "--- Round " << round << ", Turn "<< currentTurn << " ---\n";
+		std::cout << currentPlayer->playerName << "'s turn: \n";
+
+		//print bank
+		std::cout << currentPlayer->playerName << "'s Bank: \n";
+		currentPlayer->printBank();
+
+		//draw first card
+
+		currentTurn += 1;
+		if (currentTurn > 40) { playing = false; }
+	}
+
 }
 
 //Removes the deck and prints results

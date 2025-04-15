@@ -11,5 +11,6 @@ int main()
 {
 	cout << GAME_TITLE << endl;
 	Game game;
+	game.startGame();
 	return 0;
 }

@@ -4,7 +4,7 @@
 	The player object interacts with the play area and bank by playing or banking cards.
 	They store their total score and name, and can also print their current status to help the game with displaying scores.
 */
-#include "Card.h"
+#include "Cards/Card.h"
 #include "PlayArea.h"
 #include "Bank.h"
 #include <string>
@@ -20,6 +20,7 @@ public:
 	void checkPlayArea();
 	void bankCards();
 	void printPlayArea();
+	void printBank();
 private:
 	Bank bank;
 	PlayArea playArea;

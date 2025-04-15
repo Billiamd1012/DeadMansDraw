@@ -17,7 +17,7 @@ Suit Kraken::type() {
 }
 
 std::string Kraken::toString() const {
-	return "";
+	return "Kraken( "+ std::to_string(value) +")";;
 }
 
 void Kraken::willAddToBank(const Game& game) {

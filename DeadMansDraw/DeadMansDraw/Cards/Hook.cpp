@@ -17,7 +17,7 @@ Suit Hook::type() {
 }
 
 std::string Hook::toString() const {
-	return "";
+	return "Hook( "+ std::to_string(value) +")";;
 }
 
 void Hook::willAddToBank(const Game& game) {

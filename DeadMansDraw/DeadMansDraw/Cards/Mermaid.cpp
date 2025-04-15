@@ -17,7 +17,7 @@ Suit Mermaid::type() {
 }
 
 std::string Mermaid::toString() const {
-	return "";
+	return "Mermaid( "+ std::to_string(value) +")";;
 }
 
 void Mermaid::willAddToBank(const Game& game) {

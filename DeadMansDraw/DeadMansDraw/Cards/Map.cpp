@@ -17,7 +17,7 @@ Suit Map::type() {
 }
 
 std::string Map::toString() const {
-	return "";
+	return "Map( "+ std::to_string(value) +")";;
 }
 
 void Map::willAddToBank(const Game& game) {
