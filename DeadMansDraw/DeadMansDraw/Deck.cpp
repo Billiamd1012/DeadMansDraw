@@ -18,8 +18,7 @@ void Deck::createCards() {
 	CardCollection cards;
 	//for cannon
 	for (int i = 2; i <= 7; i++) {
-		Cannon c(i);
-		cards.push_back(c);
+		cards.push_back(std::make_unique<Cannon>(i));
 	}
 }
 

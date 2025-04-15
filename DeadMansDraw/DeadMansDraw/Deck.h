@@ -5,10 +5,11 @@
 	It manages these cards and passes them to the game whenever it is asked to.
 */
 #include <vector>
+#include <memory>
 
 class Card;
 
-typedef std::vector<Card> CardCollection;
+typedef std::vector<std::unique_ptr<Card>> CardCollection;
 
 class Deck {
 public:
