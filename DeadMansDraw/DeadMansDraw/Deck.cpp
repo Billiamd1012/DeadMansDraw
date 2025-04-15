@@ -13,6 +13,8 @@
 #include "Cards/Map.h"
 #include "Cards/Mermaid.h"
 #include "Cards/Kraken.h"
+#include <algorithm>
+#include <random>
 
 //Create all the cards
 Deck::Deck(){
@@ -23,7 +25,6 @@ Deck::Deck(){
 //create all of the cards in the deck
 void Deck::createCards() {
 	//loop through each suit and create 6 cards for each
-	CardCollection cards;
 	//for cannon
 	for (int i = 2; i <= 7; i++) {
 		cards.push_back(std::make_unique<Cannon>(i));
@@ -62,10 +63,14 @@ void Deck::createCards() {
 		cards.push_back(std::make_unique<Kraken>(i));
 	}
 
+	shuffleCards();
 }
 
 void Deck::shuffleCards() {
+	std::random_device rd;
+	std::default_random_engine rng(rd());
 
+	std::shuffle(cards.begin(), cards.end(), rng);
 }
 
 void Deck::getCard() {

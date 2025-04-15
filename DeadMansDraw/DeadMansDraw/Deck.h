@@ -15,8 +15,9 @@ class Deck {
 public:
 	Deck();
 	void shuffleCards();
-	void getCard();
+	Card* getCard();
 
 private:
+	CardCollection cards;
 	void createCards();
 };
