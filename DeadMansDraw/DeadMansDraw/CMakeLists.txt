@@ -3,7 +3,7 @@
 #
 
 # Add source to this project's executable.
-add_executable (DeadMansDraw "DeadMansDraw.cpp" "DeadMansDraw.h" "gameTitle.h" "Game.cpp" "Game.h" "Deck.h" "Deck.cpp" "Card.h" "Player.h" "PlayArea.h" "Bank.h")
+add_executable (DeadMansDraw "main.cpp" "main.h" "gameTitle.h" "Game.cpp" "Game.h" "Deck.h" "Deck.cpp" "Card.h" "Player.h" "PlayArea.h" "Bank.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET DeadMansDraw PROPERTY CXX_STANDARD 20)

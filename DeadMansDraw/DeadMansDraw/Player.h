@@ -7,6 +7,8 @@
 #include "Card.h"
 #include "PlayArea.h"
 #include "Bank.h"
+#include <string>
+
 
 class Player {
 public:

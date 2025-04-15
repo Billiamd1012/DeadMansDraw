@@ -11,7 +11,11 @@ Deck::Deck(){
 }
 
 //create all of the cards in the deck
-Deck::createCards() {
+void Deck::createCards() {
 	//loop through each suit and create 6 cards for each
 	CardCollection cards;
+}
+
+void Deck::shuffleCards() {
+
 }

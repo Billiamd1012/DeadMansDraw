@@ -8,8 +8,9 @@
 	- storing the currentTurn
 */
 
-#include "Game.h";
-#include <iostream>;
+#include "Game.h"
+#include "Deck.h"
+#include <iostream>
 
 using namespace std;
 

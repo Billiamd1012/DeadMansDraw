@@ -4,9 +4,10 @@
 	Card is an abstract class that is in charge of performing the suite specific actions, storing type and playing itself.
 */
 
-#include "Game.h"
-#include "Player.h"
 #include <string>
+
+class Game;
+class Player;
 
 //Enum to contain all of the different card type
 enum Suit {
