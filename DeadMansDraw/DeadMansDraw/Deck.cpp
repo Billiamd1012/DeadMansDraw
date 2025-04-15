@@ -5,6 +5,14 @@
 
 #include "Deck.h"
 #include "Cards/Cannon.h"
+#include "Cards/Chest.h"
+#include "Cards/Key.h"
+#include "Cards/Sword.h"
+#include "Cards/Hook.h"
+#include "Cards/Oracle.h"
+#include "Cards/Map.h"
+#include "Cards/Mermaid.h"
+#include "Cards/Kraken.h"
 
 //Create all the cards
 Deck::Deck(){
@@ -21,8 +29,38 @@ void Deck::createCards() {
 		cards.push_back(std::make_unique<Cannon>(i));
 	}
 
-	
-
+	//chest
+	for (int i = 2; i <= 7; i++) {
+		cards.push_back(std::make_unique<Chest>(i));
+	}
+	//key
+	for (int i = 2; i <= 7; i++) {
+		cards.push_back(std::make_unique<Key>(i));
+	}
+	//sword
+	for (int i = 2; i <= 7; i++) {
+		cards.push_back(std::make_unique<Sword>(i));
+	}
+	//hook
+	for (int i = 2; i <= 7; i++) {
+		cards.push_back(std::make_unique<Hook>(i));
+	}
+	//oracle
+	for (int i = 2; i <= 7; i++) {
+		cards.push_back(std::make_unique<Oracle>(i));
+	}
+	//map
+	for (int i = 2; i <= 7; i++) {
+		cards.push_back(std::make_unique<Map>(i));
+	}
+	//mermaid
+	for (int i = 4; i <= 9; i++) {
+		cards.push_back(std::make_unique<Mermaid>(i));
+	}
+	//kraken
+	for (int i = 2; i <= 7; i++) {
+		cards.push_back(std::make_unique<Kraken>(i));
+	}
 
 }
 
