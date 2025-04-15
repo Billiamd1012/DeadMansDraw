@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
+	cout << GAME_TITLE << endl;
 	Game game;
-	cout << "Hello CMake." << endl;
 	return 0;
 }
