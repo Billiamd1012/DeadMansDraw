@@ -20,8 +20,8 @@ public:
 	void playCard(std::unique_ptr<Card> card);
 	void checkPlayArea();
 	void bankCards();
-	void printPlayArea();
-	void printBank();
+	std::string printPlayArea();
+	std::string printBank();
 private:
 	Bank bank;
 	PlayArea playArea;

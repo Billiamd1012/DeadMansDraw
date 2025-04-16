@@ -15,10 +15,14 @@ Player::Player() {
 	totalScore = 0;
 }
 
-void Player::printBank() {
-	std::cout << "| Score: 0\n";
+std::string Player::printBank() {
+	return "| Score: 0\n";
 }
 
 void Player::playCard(std::unique_ptr<Card> card) {
 	playArea.play(std::move(card));
+}
+
+std::string Player::printPlayArea() {
+	return playArea.toString();
 }

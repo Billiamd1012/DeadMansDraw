@@ -25,11 +25,11 @@ void Game::startGame() {
 
 		//print bank
 		std::cout << currentPlayer->playerName << "'s Bank: \n";
-		currentPlayer->printBank();
+		std::cout << currentPlayer->printBank();
 
 		//draw first card
 		nextCard = deck.getCard();
-		std::cout << currentPlayer->playerName << "draws a " << nextCard->toString() << "\n";
+		std::cout << currentPlayer->playerName << " draws a " << nextCard->toString() << "\n";
 		currentTurn += 1;
 		if (currentTurn > 40) { playing = false; }
 	}
