@@ -73,6 +73,8 @@ void Deck::shuffleCards() {
 	std::shuffle(cards.begin(), cards.end(), rng);
 }
 
-void Deck::getCard() {
-
+std::unique_ptr<Card> Deck::getCard() {
+	std::unique_ptr<Card> card = std::move(cards.back());
+	cards.pop_back();
+	return card;
 }

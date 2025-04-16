@@ -17,7 +17,7 @@ Suit Cannon::type() {
 }
 
 std::string Cannon::toString() const{
-	return "Cannon( "+ std::to_string(value) +")";
+	return "Cannon("+ std::to_string(value) +")";
 }
 
 void Cannon::willAddToBank(const Game& game) {

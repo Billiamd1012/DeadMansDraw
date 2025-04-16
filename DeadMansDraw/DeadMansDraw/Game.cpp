@@ -28,7 +28,8 @@ void Game::startGame() {
 		currentPlayer->printBank();
 
 		//draw first card
-
+		nextCard = deck.getCard();
+		std::cout << currentPlayer->playerName << "draws a " << nextCard->toString() << "\n";
 		currentTurn += 1;
 		if (currentTurn > 40) { playing = false; }
 	}

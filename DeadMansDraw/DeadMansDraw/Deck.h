@@ -15,7 +15,7 @@ class Deck {
 public:
 	Deck();
 	void shuffleCards();
-	Card* getCard();
+	std::unique_ptr<Card> getCard();
 
 private:
 	CardCollection cards;

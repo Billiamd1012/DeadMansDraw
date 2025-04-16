@@ -17,7 +17,7 @@ Suit Oracle::type() {
 }
 
 std::string Oracle::toString() const {
-	return "Oracle( "+ std::to_string(value) +")";;
+	return "Oracle("+ std::to_string(value) +")";;
 }
 
 void Oracle::willAddToBank(const Game& game) {

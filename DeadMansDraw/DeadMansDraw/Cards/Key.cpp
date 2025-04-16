@@ -17,7 +17,7 @@ Suit Key::type() {
 }
 
 std::string Key::toString() const {
-	return "Key( "+ std::to_string(value) +")";;
+	return "Key("+ std::to_string(value) +")";;
 }
 
 void Key::willAddToBank(const Game& game) {
