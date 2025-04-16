@@ -29,7 +29,12 @@ void Game::startGame() {
 
 		//draw first card
 		nextCard = deck.getCard();
-		std::cout << currentPlayer->playerName << " draws a " << nextCard->toString() << "\n";
+		std::cout << currentPlayer->playerName << " draws a " << nextCard->toString(true) << "\n";
+
+		//play card
+		currentPlayer->playCard(std::move(nextCard));
+		std::cout << currentPlayer->playerName << "'s Play Area: \n";
+		std::cout << currentPlayer->printPlayArea();
 		currentTurn += 1;
 		if (currentTurn > 40) { playing = false; }
 	}

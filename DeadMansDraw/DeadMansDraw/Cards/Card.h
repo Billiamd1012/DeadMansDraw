@@ -15,7 +15,7 @@ class Card {
 public:
 	virtual void play(const Game& game, Player& player) = 0;
 	virtual Suit type() = 0;
-	virtual std::string toString() const = 0;
+	virtual std::string toString(bool verbose) const = 0;
 	virtual void willAddToBank(const Game& game) = 0;
 	virtual int getValue() = 0;
 private:

@@ -16,7 +16,10 @@ Suit Chest::type() {
 	return suit;
 }
 
-std::string Chest::toString() const {
+std::string Chest::toString(bool verbose) const {
+	if (!verbose) {
+		return "Chest(" + std::to_string(value) + ")";
+	}
 	return "Chest("+ std::to_string(value) +")\n	No immediate effect. If banked with a Key card, draw as many bonus cards from the Discard pile as you moved into your Bank.";
 }
 

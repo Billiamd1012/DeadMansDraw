@@ -16,7 +16,10 @@ Suit Hook::type() {
 	return suit;
 }
 
-std::string Hook::toString() const {
+std::string Hook::toString(bool verbose) const {
+	if (!verbose) {
+		return "Hook(" + std::to_string(value) + ")";
+	}
 	return "Hook("+ std::to_string(value) +")\n Play the top card (i.e. the highest value) of any suit from your Bank into your play area.You must select one card.";
 }
 

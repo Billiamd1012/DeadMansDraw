@@ -16,7 +16,10 @@ Suit Kraken::type() {
 	return suit;
 }
 
-std::string Kraken::toString() const {
+std::string Kraken::toString(bool verbose) const {
+	if (!verbose) {
+		return "Kraken(" + std::to_string(value) + ")";
+	}
 	return "Kraken("+ std::to_string(value) +")\n	Must draw and play three cards consecutively.";
 }
 

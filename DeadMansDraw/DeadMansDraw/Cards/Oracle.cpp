@@ -16,7 +16,10 @@ Suit Oracle::type() {
 	return suit;
 }
 
-std::string Oracle::toString() const {
+std::string Oracle::toString(bool verbose) const {
+	if (!verbose) {
+		return "Oracle(" + std::to_string(value) + ")";
+	}
 	return "Oracle("+ std::to_string(value) +")\n	Peek at the top card of the deck before choosing whether to draw.";
 }
 

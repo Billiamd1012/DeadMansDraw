@@ -16,7 +16,10 @@ Suit Mermaid::type() {
 	return suit;
 }
 
-std::string Mermaid::toString() const {
+std::string Mermaid::toString(bool verbose) const {
+	if (!verbose) {
+		return "Mermaid(" + std::to_string(value) + ")";
+	}
 	return "Mermaid("+ std::to_string(value) +")\n	No ability but the cards have a higher point value.";
 }
 

@@ -12,7 +12,7 @@ class Oracle : public Card {
 public:
     Oracle(int value);
     Suit type();
-    std::string toString() const override;
+    std::string toString(bool verbose) const override;
     void willAddToBank(const Game& game);
     int getValue();
     void play(const Game& _game, Player& player);
