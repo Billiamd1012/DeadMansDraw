@@ -10,13 +10,14 @@
 #include <string>
 
 
+
 class Player {
 public:
 	int totalScore;
 	std::string playerName;
 	
 	Player();
-	void playCard(Card& card);
+	void playCard(std::unique_ptr<Card> card);
 	void checkPlayArea();
 	void bankCards();
 	void printPlayArea();

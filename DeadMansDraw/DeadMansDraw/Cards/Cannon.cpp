@@ -17,7 +17,7 @@ Suit Cannon::type() {
 }
 
 std::string Cannon::toString() const{
-	return "Cannon("+ std::to_string(value) +")";
+	return "Cannon("+ std::to_string(value) +")\n	Discard the top card (i.e. the highest value) of any suit from the other player’s Bank to the Discard Pile.";
 }
 
 void Cannon::willAddToBank(const Game& game) {

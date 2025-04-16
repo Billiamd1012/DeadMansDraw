@@ -17,7 +17,7 @@ Suit Oracle::type() {
 }
 
 std::string Oracle::toString() const {
-	return "Oracle("+ std::to_string(value) +")";;
+	return "Oracle("+ std::to_string(value) +")\n	Peek at the top card of the deck before choosing whether to draw.";
 }
 
 void Oracle::willAddToBank(const Game& game) {

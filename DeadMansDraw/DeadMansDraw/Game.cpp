@@ -19,7 +19,7 @@ void Game::startGame() {
 	currentPlayer = &player1;
 	std::cout << "Starting Dead Man's Draw++!\n";
 	while (playing) {
-		int round = std::ceil(currentTurn+1)/2;
+		int round = (currentTurn+1)/2;
 		std::cout << "--- Round " << round << ", Turn "<< currentTurn << " ---\n";
 		std::cout << currentPlayer->playerName << "'s turn: \n";
 

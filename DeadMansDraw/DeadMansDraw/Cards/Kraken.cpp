@@ -17,7 +17,7 @@ Suit Kraken::type() {
 }
 
 std::string Kraken::toString() const {
-	return "Kraken("+ std::to_string(value) +")";;
+	return "Kraken("+ std::to_string(value) +")\n	Must draw and play three cards consecutively.";
 }
 
 void Kraken::willAddToBank(const Game& game) {

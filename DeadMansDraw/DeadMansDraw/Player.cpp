@@ -18,3 +18,7 @@ Player::Player() {
 void Player::printBank() {
 	std::cout << "| Score: 0\n";
 }
+
+void Player::playCard(std::unique_ptr<Card> card) {
+	playArea.play(std::move(card));
+}

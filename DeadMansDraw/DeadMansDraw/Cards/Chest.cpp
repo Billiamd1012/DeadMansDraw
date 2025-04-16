@@ -17,7 +17,7 @@ Suit Chest::type() {
 }
 
 std::string Chest::toString() const {
-	return "Chest("+ std::to_string(value) +")";;
+	return "Chest("+ std::to_string(value) +")\n	No immediate effect. If banked with a Key card, draw as many bonus cards from the Discard pile as you moved into your Bank.";
 }
 
 void Chest::willAddToBank(const Game& game) {
