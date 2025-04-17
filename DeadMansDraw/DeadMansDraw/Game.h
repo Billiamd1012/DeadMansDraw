@@ -21,6 +21,7 @@ public:
 	void shuffleDeck();
 private:
 	std::unique_ptr<Card> nextCard;
+	bool drawingCard = true;
 	bool playing = true;
 	Player player1;
 	Player player2;

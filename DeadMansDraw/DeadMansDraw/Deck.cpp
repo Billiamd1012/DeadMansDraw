@@ -74,6 +74,9 @@ void Deck::shuffleCards() {
 }
 
 std::unique_ptr<Card> Deck::getCard() {
+	if (cards.empty()) {
+		return nullptr;
+	}
 	std::unique_ptr<Card> card = std::move(cards.back());
 	cards.pop_back();
 	return card;

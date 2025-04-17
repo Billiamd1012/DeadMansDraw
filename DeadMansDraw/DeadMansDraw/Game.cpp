@@ -30,7 +30,6 @@ void Game::startGame() {
 		drawNextCard();
 
 		std::string nextCardInput;
-		bool drawingCard = true;
 		while (drawingCard) {
 			std::cout << "Draw again? (y/n): ";
 			std::cin >> nextCardInput;
@@ -75,10 +74,18 @@ void Game::shuffleDeck() {
 void Game::drawNextCard() {
 	//draw first card
 	nextCard = deck.getCard();
-	std::cout << currentPlayer->playerName << " draws a " << nextCard->toString(true) << "\n";
 
-	//play first card
-	currentPlayer->playCard(std::move(nextCard));
-	std::cout << currentPlayer->playerName << "'s Play Area: \n";
-	std::cout << currentPlayer->printPlayArea();
+	if (nextCard == nullptr) {
+		std::cout << "No more cards to draw.\n";
+		endGame();
+	}
+
+	else {
+		std::cout << currentPlayer->playerName << " draws a " << nextCard->toString(true) << "\n";
+
+		//play first card
+		currentPlayer->playCard(std::move(nextCard));
+		std::cout << currentPlayer->playerName << "'s Play Area: \n";
+		std::cout << currentPlayer->printPlayArea();
+	}
 }
