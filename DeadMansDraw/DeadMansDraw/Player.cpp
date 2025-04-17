@@ -9,7 +9,7 @@
 
 
 Player::Player() {
-	std::string names[] = { "Sam", "Billy", "Jen", "Bob", "Sally", "Joe", "Sue","Sasha", "Tina", "Marge" };
+	std::string names[] = { "Sam", "Jen", "Billy", "Bob", "Sally", "Joe", "Sue","Sasha", "Tina", "Marge" };
 	playerName = names[rand() % 10];
 
 	totalScore = 0;

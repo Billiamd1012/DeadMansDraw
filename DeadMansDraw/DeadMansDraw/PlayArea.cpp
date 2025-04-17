@@ -8,7 +8,7 @@ std::string PlayArea::toString() {
     std::string result;
 
     for (size_t i = 0; i < playedCards.size(); ++i) {
-        result += " " + playedCards[i]->toString(false) + "\n";
+        result += "\t" + playedCards[i]->toString(false) + "\n";
     }
 
     return result;
