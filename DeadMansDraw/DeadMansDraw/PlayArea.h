@@ -11,6 +11,5 @@ class PlayArea {
 public:
 	void play(std::unique_ptr<Card> card);
 	std::string toString();
-private:
 	CardCollection playedCards;
 };

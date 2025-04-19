@@ -16,6 +16,9 @@ using namespace std;
 
 //Initalises the deck and player
 void Game::startGame() {
+	player1.setGame(this);
+	player2.setGame(this);
+
 	currentPlayer = &player1;
 	std::cout << "Starting Dead Man's Draw++!\n";
 	while (playing) {
@@ -28,7 +31,7 @@ void Game::startGame() {
 		std::cout << currentPlayer->printBank();
 
 		drawNextCard();
-
+		drawingCard = true;
 		std::string nextCardInput;
 		while (drawingCard) {
 			std::cout << "Draw again? (y/n): ";
@@ -40,6 +43,7 @@ void Game::startGame() {
 			}
 			else if (nextCardInput == "n") {
 				//end player turn
+				currentPlayer->bankCards();
 				drawingCard = false;
 			}
 			else {

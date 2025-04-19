@@ -11,6 +11,7 @@
 */
 #include "Deck.h"
 #include "Player.h"
+#include "Discard.h"
 
 class Game {
 public:
@@ -19,6 +20,7 @@ public:
 	void startGame();
 	void endGame();
 	void shuffleDeck();
+	Discard disacrdPile;
 private:
 	std::unique_ptr<Card> nextCard;
 	bool drawingCard = true;

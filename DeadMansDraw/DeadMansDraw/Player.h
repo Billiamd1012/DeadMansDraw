@@ -9,6 +9,7 @@
 #include "Bank.h"
 #include <string>
 
+class Game;
 
 
 class Player {
@@ -17,12 +18,14 @@ public:
 	std::string playerName;
 	
 	Player();
+	void setGame(Game* g);
 	void playCard(std::unique_ptr<Card> card);
 	void checkPlayArea();
 	void bankCards();
 	std::string printPlayArea();
 	std::string printBank();
 private:
+	Game* game;
 	Bank bank;
 	PlayArea playArea;
 };
