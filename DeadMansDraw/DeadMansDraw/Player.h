@@ -10,6 +10,7 @@
 #include <string>
 
 class Game;
+class Discard;
 
 
 class Player {
@@ -20,12 +21,15 @@ public:
 	Player();
 	void setGame(Game* g);
 	void playCard(std::unique_ptr<Card> card);
-	void checkPlayArea();
+	bool checkPlayArea();
 	void bankCards();
 	std::string printPlayArea();
 	std::string printBank();
+	void discardCards(Discard* discard);
+	Bank* getBank();
 private:
 	Game* game;
 	Bank bank;
 	PlayArea playArea;
+
 };

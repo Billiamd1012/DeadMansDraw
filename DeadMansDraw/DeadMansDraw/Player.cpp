@@ -6,6 +6,8 @@
 #include "Bank.h"
 #include "PlayArea.h"
 #include <iostream>
+#include <vector>
+#include "Discard.h"
 
 
 Player::Player() {
@@ -41,4 +43,42 @@ void Player::bankCards() {
 
 		playArea.playedCards.clear();
 	}
+}
+
+/*
+	Checks if there are duplicates suits in the play area
+	return
+		true (if there are duplicates)
+		false (if there are no duplicates)
+*/
+bool Player::checkPlayArea() {
+	//for each card in play area check that the suit hasn't been drawn yet
+	std::vector<Suit> playedSuits = std::vector<Suit>();
+	for (size_t i = 0; i < playArea.playedCards.size(); ++i) {
+		Card* currentCard = playArea.playedCards[i].get();
+
+		//check if suit has already been played
+		for (size_t i = 0; i < playedSuits.size(); ++i) {
+			if (currentCard->type() == playedSuits[i]) {
+				return true;
+			}
+		}
+
+		//otherwise push the suit to the played suits vector
+		playedSuits.push_back(currentCard->type());
+	}
+
+	return false;
+}
+
+void Player::discardCards(Discard* discard) {
+	for (size_t i = 0; i < playArea.playedCards.size(); ++i) {
+		discard->addCard(std::move(playArea.playedCards[i]));
+	}
+	playArea.playedCards.clear();
+
+}
+
+Bank* Player::getBank() {
+	return &bank;
 }

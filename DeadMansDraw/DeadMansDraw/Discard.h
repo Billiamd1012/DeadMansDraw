@@ -7,5 +7,7 @@
 
 class Discard {
 public:
+	void addCard(std::unique_ptr<Card> card);
+private:
 	CardCollection discardedCards;
 };

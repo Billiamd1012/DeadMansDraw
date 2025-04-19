@@ -20,6 +20,7 @@ void Game::startGame() {
 	player2.setGame(this);
 
 	currentPlayer = &player1;
+	otherPlayer = &player2;
 	std::cout << "Starting Dead Man's Draw++!\n";
 	while (playing) {
 		int round = (currentTurn+1)/2;
@@ -51,12 +52,18 @@ void Game::startGame() {
 			}
 		}
 
+		if (currentPlayer->checkPlayArea()) {
+			discardCards();
+		}
+
 		//iterate turn counter and switch players
 		currentTurn += 1;
 		if (currentTurn % 2 == 0) {
 			currentPlayer = &player2;
+			otherPlayer = &player1;
 		}
 		else {
+			otherPlayer = &player2;
 			currentPlayer = &player1;
 		}
 		if (currentTurn > 40) { playing = false; }
@@ -92,4 +99,10 @@ void Game::drawNextCard() {
 		std::cout << currentPlayer->playerName << "'s Play Area: \n";
 		std::cout << currentPlayer->printPlayArea();
 	}
+}
+
+void Game::discardCards() {
+	//for each card in current player play area move to the discard pile 
+	std::cout << "BUST! " << currentPlayer->playerName << " loses all cards in play area.";
+	currentPlayer->discardCards(&disacrdPile);
 }

@@ -17,11 +17,13 @@ class Game {
 public:
 	int currentTurn = 1;
 	Player* currentPlayer;
+	Player* otherPlayer;
 	void startGame();
 	void endGame();
 	void shuffleDeck();
-	Discard disacrdPile;
 private:
+	Discard disacrdPile;
+	void discardCards();
 	std::unique_ptr<Card> nextCard;
 	bool drawingCard = true;
 	bool playing = true;
