@@ -60,7 +60,7 @@ void Cannon::play(const Game& game, Player& player) {
 		// Get the chosen card's index in the original bankedCards vector
 		size_t selectedIndex = indicesToRemove[choice-1];
 
-		// Remove and discard the card
+		// Remove and move the card
 		std::unique_ptr<Card> removedCard = std::move(otherBank->bankedCards[selectedIndex]);
 		std::cout << "\tYou shoot the " << removedCard.get()->toString(false) << " out of the other player's Bank\n";
 		otherBank->bankedCards.erase(otherBank->bankedCards.begin() + selectedIndex);
