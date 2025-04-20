@@ -50,7 +50,6 @@ void Cannon::play(const Game& game, Player& player) {
 			otherPlayer->discardCard(std::move(removedCard));
 		}
 
-
 	}
 	else {
 		std::cout << "No cards found in "<< game.otherPlayer->playerName <<"'s bank.";

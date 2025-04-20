@@ -26,6 +26,8 @@ std::string Player::printBank() {
 }
 
 void Player::playCard(std::unique_ptr<Card> card) {
+	Card* currentCard = card.get();
+	currentCard->play(*game,*this);
 	playArea.play(std::move(card));
 }
 

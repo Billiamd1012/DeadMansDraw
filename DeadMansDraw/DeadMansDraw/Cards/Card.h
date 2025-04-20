@@ -8,6 +8,7 @@
 #include <memory>
 #include "Suit.h"
 #include <iostream>
+#include <algorithm>
 
 class Game;
 class Player;
