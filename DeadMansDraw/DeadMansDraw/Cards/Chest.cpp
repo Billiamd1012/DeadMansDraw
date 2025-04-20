@@ -24,5 +24,10 @@ std::string Chest::toString(bool verbose) const {
 }
 
 void Chest::willAddToBank(const Game& game) {
+	//check if there is a key in the play area
+
+	//if there is
+		//get the total number of cards in the play area
+		//move that number or the all of the cards into the bank whichever is lower
 
 }
