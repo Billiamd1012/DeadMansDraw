@@ -11,5 +11,5 @@ std::string PlayArea::toString() {
         result += "\t" + playedCards[i]->toString(false) + "\n";
     }
 
-    return result;
+    return result + "\n";
 }

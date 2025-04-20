@@ -43,17 +43,31 @@ void Cannon::play(const Game& game, Player& player) {
 		}
 		std::sort(indicesToRemove.begin(), indicesToRemove.end(), std::greater<size_t>());
 
-		for (size_t index : indicesToRemove) {
-			// Remove and discard the card
-			std::unique_ptr<Card> removedCard = std::move(otherBank->bankedCards[index]);
-			otherBank->bankedCards.erase(otherBank->bankedCards.begin() + index);
-			otherPlayer->discardCard(std::move(removedCard));
+		//for each of the highest card print them out and as the player which index they want to remove
+		for (size_t i = 0; i < indicesToRemove.size(); ++i) {
+			size_t index = indicesToRemove[i];
+			const std::unique_ptr<Card>& card = otherBank->bankedCards[index];
+			std::cout << "\t(" << i + 1 << ") " << card->toString(false) << "\n";
 		}
 
+		// Ask the player to choose one to discard
+		int choice = -1;
+		do {
+			std::cout << "\tWhich card do you pick? ";
+			std::cin >> choice;
+		} while (choice < 0 || static_cast<size_t>(choice-1) >= indicesToRemove.size());
 
+		// Get the chosen card's index in the original bankedCards vector
+		size_t selectedIndex = indicesToRemove[choice-1];
+
+		// Remove and discard the card
+		std::unique_ptr<Card> removedCard = std::move(otherBank->bankedCards[selectedIndex]);
+		std::cout << "\tYou shoot the " << removedCard.get()->toString(false) << " out of the other player's Bank\n";
+		otherBank->bankedCards.erase(otherBank->bankedCards.begin() + selectedIndex);
+		otherPlayer->discardCard(std::move(removedCard));
 	}
 	else {
-		std::cout << "No cards found in "<< game.otherPlayer->playerName <<"'s bank.";
+		std::cout << "No cards found in "<< game.otherPlayer->playerName <<"'s bank.\n";
 	}
 }
 
