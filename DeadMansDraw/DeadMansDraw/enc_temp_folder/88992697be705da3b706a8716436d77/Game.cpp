@@ -109,6 +109,6 @@ void Game::drawNextCard() {
 
 void Game::discardCards() {
 	//for each card in current player play area move to the discard pile 
-	std::cout << "BUST! " << currentPlayer->playerName << " loses all cards in play area.\n";
+	std::cout << "BUST! " << currentPlayer->playerName << " loses all cards in play area.";
 	currentPlayer->discardPlay();
 }

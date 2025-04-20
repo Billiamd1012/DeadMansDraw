@@ -19,15 +19,17 @@ public:
 	std::string playerName;
 	
 	Player();
-	void setGame(Game* g);
+	void setGame(Game* g, Discard* discard);
 	void playCard(std::unique_ptr<Card> card);
 	bool checkPlayArea();
 	void bankCards();
 	std::string printPlayArea();
 	std::string printBank();
-	void discardCards(Discard* discard);
+	void discardPlay();
+	void discardCard(std::unique_ptr<Card> card);
 	Bank* getBank();
 private:
+	Discard* discard;
 	Game* game;
 	Bank bank;
 	PlayArea playArea;

@@ -7,6 +7,7 @@
 #include <string>
 #include <memory>
 #include "Suit.h"
+#include <iostream>
 
 class Game;
 class Player;

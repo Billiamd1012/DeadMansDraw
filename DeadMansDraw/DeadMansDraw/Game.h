@@ -13,6 +13,7 @@
 #include "Player.h"
 #include "Discard.h"
 
+
 class Game {
 public:
 	int currentTurn = 1;
@@ -22,7 +23,7 @@ public:
 	void endGame();
 	void shuffleDeck();
 private:
-	Discard disacrdPile;
+	Discard discardPile;
 	void discardCards();
 	std::unique_ptr<Card> nextCard;
 	bool drawingCard = true;

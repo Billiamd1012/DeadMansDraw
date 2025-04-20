@@ -16,8 +16,9 @@ Player::Player() {
 	totalScore = 0;
 }
 
-void Player::setGame(Game* g) {
+void Player::setGame(Game* g, Discard* d) {
 	game = g;
+	discard = d;
 }
 
 std::string Player::printBank() {
@@ -41,8 +42,9 @@ void Player::bankCards() {
 
 		bank.bankedCards.push_back(move(playArea.playedCards[i]));
 
-		playArea.playedCards.clear();
 	}
+	playArea.playedCards.clear();
+
 }
 
 /*
@@ -71,12 +73,15 @@ bool Player::checkPlayArea() {
 	return false;
 }
 
-void Player::discardCards(Discard* discard) {
+void Player::discardPlay() {
 	for (size_t i = 0; i < playArea.playedCards.size(); ++i) {
 		discard->addCard(std::move(playArea.playedCards[i]));
 	}
 	playArea.playedCards.clear();
+}
 
+void Player::discardCard(std::unique_ptr<Card> card) {
+	discard->addCard(std::move(card));
 }
 
 Bank* Player::getBank() {
