@@ -1,4 +1,7 @@
 #include "Oracle.h"
+#include "../Game.h"
+#include <iostream>
+
 
 Oracle::Oracle(int _value) : value(_value) {
 	suit = Suit::Oracle;
@@ -9,7 +12,8 @@ int Oracle::getValue() {
 }
 
 void Oracle::play(const Game& _game, Player& player) {
-
+	Card* nextCard = _game.deck.showNext();
+	std::cout << "\tThe oracle shows you the next card is a " << nextCard->toString(false);
 }
 
 Suit Oracle::type() {

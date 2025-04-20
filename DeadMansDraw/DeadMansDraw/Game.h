@@ -19,6 +19,7 @@ public:
 	int currentTurn = 1;
 	Player* currentPlayer;
 	Player* otherPlayer;
+	Deck deck;
 	void startGame();
 	void endGame();
 	void shuffleDeck();
@@ -30,6 +31,5 @@ private:
 	bool playing = true;
 	Player player1;
 	Player player2;
-	Deck deck;
 	void drawNextCard();
 };

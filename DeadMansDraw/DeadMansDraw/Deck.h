@@ -13,7 +13,7 @@ public:
 	Deck();
 	void shuffleCards();
 	std::unique_ptr<Card> getCard();
-
+	Card* showNext() const;
 private:
 	CardCollection cards;
 	void createCards();

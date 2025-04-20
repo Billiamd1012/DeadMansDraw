@@ -81,3 +81,10 @@ std::unique_ptr<Card> Deck::getCard() {
 	cards.pop_back();
 	return card;
 }
+
+Card* Deck::showNext() const {
+	if (cards.empty()) {
+		return nullptr;
+	}
+	return cards.back().get();
+}
