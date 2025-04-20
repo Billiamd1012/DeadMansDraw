@@ -15,7 +15,7 @@ public:
     std::string toString(bool verbose) const override;
     void willAddToBank(const Game& game);
     int getValue();
-    void play(const Game& _game, Player& player);
+    void play(const Game& game, Player& player);
 private:
     int value;
 };
