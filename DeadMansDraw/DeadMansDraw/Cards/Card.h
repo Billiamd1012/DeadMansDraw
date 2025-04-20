@@ -21,7 +21,7 @@ public:
 	virtual void willAddToBank(const Game& game) = 0;
 	virtual int getValue() = 0;
 private:
-	int value;
+	int value = 0;
 protected:
-	Suit suit;
+	Suit suit = Suit::None;
 };

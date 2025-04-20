@@ -89,3 +89,11 @@ void Player::discardCard(std::unique_ptr<Card> card) {
 Bank* Player::getBank() {
 	return &bank;
 }
+
+PlayArea* Player::getPlayArea() {
+	return &playArea;
+}
+
+Discard* Player::getDiscardPile() {
+	return discard;
+}

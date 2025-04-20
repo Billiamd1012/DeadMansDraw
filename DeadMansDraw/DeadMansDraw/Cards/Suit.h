@@ -1,6 +1,7 @@
 #pragma once
 
 enum class Suit {
+	None,
 	Cannon,
 	Chest,
 	Key,

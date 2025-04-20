@@ -28,6 +28,8 @@ public:
 	void discardPlay();
 	void discardCard(std::unique_ptr<Card> card);
 	Bank* getBank();
+	PlayArea* getPlayArea();
+	Discard* getDiscardPile();
 private:
 	Discard* discard;
 	Game* game;
