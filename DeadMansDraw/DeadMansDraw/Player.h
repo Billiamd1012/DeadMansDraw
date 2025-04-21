@@ -30,6 +30,7 @@ public:
 	Bank* getBank();
 	PlayArea* getPlayArea();
 	Discard* getDiscardPile();
+	void drawNCards(int n);
 private:
 	Discard* discard;
 	Game* game;

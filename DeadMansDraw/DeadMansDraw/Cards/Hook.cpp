@@ -55,6 +55,9 @@ void Hook::play(const Game& game, Player& player) {
 		playerBank->bankedCards.erase(playerBank->bankedCards.begin() + selectedIndex);
 		currentPlayer->playCard(std::move(removedCard));
 	}
+	else {
+		std::cout << "No cards in your bank.\n";
+	}
 }
 
 Suit Hook::type() {
@@ -65,7 +68,7 @@ std::string Hook::toString(bool verbose) const {
 	if (!verbose) {
 		return "Hook(" + std::to_string(value) + ")";
 	}
-	return "Hook("+ std::to_string(value) +")\n\tPlay the top card (i.e. the highest value) of any suit from your Bank into your play area.You must select one card.";
+	return "Hook("+ std::to_string(value) +")\n\tPlay the top card (i.e. the highest value) of any suit from your Bank into your play area. You must select one card.";
 }
 
 void Hook::willAddToBank(const Game& game) {

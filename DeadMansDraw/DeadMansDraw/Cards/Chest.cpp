@@ -29,6 +29,8 @@ void Chest::willAddToBank(const Game& game) {
 	bool key = false;
 	PlayArea* playArea = game.currentPlayer->getPlayArea();
 	for (size_t i = 0; i < playArea->playedCards.size(); ++i) {
+
+
 		if (playArea->playedCards[i].get()->type() == Suit::Key) {
 			key = true;
 		}
@@ -46,14 +48,21 @@ void Chest::willAddToBank(const Game& game) {
 
 		//move that number or all of the cards in the bank (whichever is lower) from the discard pile into the bank
 		for (int i = 0; i < maxToAdd; ++i) {
-			addedCards.push_back(discard->discardedCards[i].get()->toString(false));
-			playerBank->bankedCards.push_back(std::move(discard->discardedCards[i]));
+			auto& cardPtr = discard->discardedCards.back(); 
+			if (cardPtr) {
+				addedCards.push_back(cardPtr->toString(false));
+				playerBank->bankedCards.push_back(std::move(cardPtr));
+			}
+			discard->discardedCards.pop_back(); 
 		}
+
+
+
 		if (addedCards.size() == 0) {
-			std::cout << "No cards in the discard pile.";
+			std::cout << "No cards in the discard pile.\n";
 		}
 		else if (addedCards.size() == 1) {
-			std::cout << "Chest and key activated. Added " << addedCards[0] << " to your bank.";
+			std::cout << "Chest and key activated. Added " << addedCards[0] << " to your bank.\n";
 		}
 		else {
 			std::cout << "Chest and key activated. Added ";
@@ -63,7 +72,7 @@ void Chest::willAddToBank(const Game& game) {
 					std::cout << ", ";
 				}
 			}
-			std::cout << " to your bank.";
+			std::cout << " to your bank.\n";
 		}
 		
 	}

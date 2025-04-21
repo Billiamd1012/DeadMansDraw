@@ -23,13 +23,13 @@ public:
 	void startGame();
 	void endGame();
 	void shuffleDeck();
+	void drawNextCard();
+	void discardCards();
 private:
 	Discard discardPile;
-	void discardCards();
 	std::unique_ptr<Card> nextCard;
 	bool drawingCard = true;
 	bool playing = true;
 	Player player1;
 	Player player2;
-	void drawNextCard();
 };

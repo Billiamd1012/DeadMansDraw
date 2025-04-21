@@ -13,7 +13,7 @@ int Oracle::getValue() {
 
 void Oracle::play(const Game& _game, Player& player) {
 	Card* nextCard = _game.deck.showNext();
-	std::cout << "\tThe oracle shows you the next card is a " << nextCard->toString(false);
+	std::cout << "\tThe oracle shows you the next card is a " << nextCard->toString(false) << "\n";
 }
 
 Suit Oracle::type() {

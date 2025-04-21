@@ -19,7 +19,7 @@ void Map::play(const Game& _game, Player& player) {
 		int maxToAdd = std::min((int)discardPile->discardedCards.size(), 3);
 
 		for (int i = 0; i < maxToAdd; ++i) {
-			std::cout<< "(" << i << ")" << (discardPile->discardedCards[i].get()->toString(false));
+			std::cout<< "\t(" << i+1 << ")" << (discardPile->discardedCards[i].get()->toString(false))<<"\n";
 		}
 
 		// Ask the player to choose one to discard
@@ -31,9 +31,12 @@ void Map::play(const Game& _game, Player& player) {
 
 		// Remove and move the card
 		std::unique_ptr<Card> removedCard = std::move(discardPile->discardedCards[choice-1]);
-		std::cout << "\tYou played the " << removedCard.get()->toString(false) << "\n";
+		std::cout << "\tYou played the " << removedCard.get()->toString(true) << "\n";
 		discardPile->discardedCards.erase(discardPile->discardedCards.begin() + choice-1);
 		_game.currentPlayer->playCard(std::move(removedCard));
+	}
+	else {
+		std::cout << "No cards in the discard pile.";
 	}
 }
 

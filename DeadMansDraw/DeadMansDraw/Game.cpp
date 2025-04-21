@@ -91,12 +91,16 @@ void Game::shuffleDeck() {
 void Game::drawNextCard() {
 	//draw first card
 	nextCard = deck.getCard();
-
+	 
 	if (nextCard == nullptr) {
 		std::cout << "No more cards to draw.\n";
 		endGame();
+		return;
 	}
-
+	else if (currentPlayer->checkPlayArea()) {
+		discardCards();
+		drawingCard = false;
+	}
 	else {
 		std::cout << currentPlayer->playerName << " draws a " << nextCard->toString(true) << "\n";
 

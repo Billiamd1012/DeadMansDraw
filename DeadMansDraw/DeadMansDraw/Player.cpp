@@ -8,6 +8,8 @@
 #include <iostream>
 #include <vector>
 #include "Discard.h"
+#include "Game.h"
+
 
 
 Player::Player() {
@@ -26,9 +28,13 @@ std::string Player::printBank() {
 }
 
 void Player::playCard(std::unique_ptr<Card> card) {
-	Card* currentCard = card.get();
-	currentCard->play(*game,*this);
+	if (!card) {
+		std::cerr << "Error: Tried to play a null card.\n";
+		return;
+	}
 	playArea.play(std::move(card));
+	Card* currentCard = playArea.playedCards.back().get();
+	currentCard->play(*game,*this);
 }
 
 std::string Player::printPlayArea() {
@@ -41,9 +47,11 @@ void Player::bankCards() {
 		Card* currentCard = playArea.playedCards[i].get();
 		
 		currentCard->willAddToBank(*game);
+	}
+	for (size_t i = 0; i < playArea.playedCards.size(); ++i) {
+		Card* currentCard = playArea.playedCards[i].get();
 
 		bank.bankedCards.push_back(move(playArea.playedCards[i]));
-
 	}
 	playArea.playedCards.clear();
 
@@ -96,4 +104,14 @@ PlayArea* Player::getPlayArea() {
 
 Discard* Player::getDiscardPile() {
 	return discard;
+}
+
+void Player::drawNCards(int n) {
+	for (int i = 0; i < n; ++i) {
+		game->drawNextCard(); 
+		if (checkPlayArea()) {
+			game->discardCards();
+			return;
+		}
+	}
 }

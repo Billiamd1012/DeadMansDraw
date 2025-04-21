@@ -1,4 +1,5 @@
 #include "Kraken.h"
+#include "../Game.h"
 
 Kraken::Kraken(int _value) : value(_value) {
 	suit = Suit::Kraken;
@@ -9,7 +10,7 @@ int Kraken::getValue() {
 }
 
 void Kraken::play(const Game& _game, Player& player) {
-
+	player.drawNCards(3);
 }
 
 Suit Kraken::type() {
