@@ -39,6 +39,7 @@ void Game::startGame() {
 			if (currentPlayer->checkPlayArea()) {
 				discardCards();
 				drawingCard = false;
+				break;
 			}
 
 			//if not then ask the user if they want to draw again

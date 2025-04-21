@@ -52,8 +52,12 @@ void Sword::play(const Game& game, Player& player) {
 		// Remove and move the card
 		std::unique_ptr<Card> removedCard = std::move(otherBank->bankedCards[selectedIndex]);
 		std::cout << "\tYou swipe the " << removedCard.get()->toString(false) << " out of the other player's Bank\n";
+		std::cout << removedCard.get()->toString(true);
 		otherBank->bankedCards.erase(otherBank->bankedCards.begin() + selectedIndex);
 		game.currentPlayer->playCard(std::move(removedCard));
+	}
+	else {
+		std::cout << "No cards in the other players bank.\n";
 	}
 }
 
